@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Instrument_Sans, Newsreader } from "next/font/google";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
 
-const sans = Instrument_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const serif = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-serif" });
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+});
 
 export const metadata: Metadata = {
-  title: "Mauro",
-  description: "Willkommen bei Mauro",
+  title: { default: siteConfig.name, template: `%s · ${siteConfig.name}` },
+  description: siteConfig.description,
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="de-CH" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="de-CH" className={`${instrumentSans.variable} ${newsreader.variable}`}>
       <body>{children}</body>
-      <body>
-        <Navigation />
-        {children}
-        <Footer />
-      </body>
     </html>
   );
 }

@@ -1,62 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  /* Farben aus Figma */
-  --creme: #fcfaf6;
-  --beige: #f6f0e4;
-  --schwarz: #000000;
-  --weinrot: #5e1a24;
-  --grau: #545454;
-  --grau-hell: #a39e97;
-  --linie: #e4e4e4;
+  /* Palette (Figma: Farben) */
+  --color-cream: #fcfaf6;
+  --color-beige: #f6f0e4;
+  --color-black: #000000;
+  --color-wine: #5e1a24;
+  --color-gray: #545454;
+  --color-gray-light: #a39e97;
+  --color-line: #e4e4e4;
 
-  /* seitlicher Abstand: 80px wie in Figma, auf dem Handy kleiner */
-  --rand: clamp(20px, 5.5vw, 80px);
+  /* Semantic tokens */
+  --color-bg: var(--color-cream);
+  --color-surface: var(--color-beige);
+  --color-text: var(--color-black);
+  --color-text-muted: var(--color-gray);
+  --color-accent: var(--color-wine);
+  --color-border: var(--color-line);
+
+  /* Typography */
+  --font-display: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-body: var(--font-newsreader), Georgia, serif;
+
+  /* Layout */
+  --gutter: clamp(1.25rem, 5.5vw, 5rem);
 }
 
-* { box-sizing: border-box; }
-html, body { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-  background: var(--creme);
-  color: var(--schwarz);
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: 18px;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Textstile aus Figma */
-.display, h1, h2, nav, .klein, .link {
-  font-family: var(--font-sans), system-ui, sans-serif;
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
 }
-.display {
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; }
+h2 { font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.015em; }
+p { margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* Text styles (Figma: Textstile) */
+.text-display {
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(3.5rem, 11.5vw, 10.5rem);
   line-height: 0.92;
   letter-spacing: -0.04em;
-  margin: 0;
 }
-h1 {
-  font-weight: 500;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin: 0;
-}
-h2 {
-  font-weight: 500;
-  font-size: 1.75rem;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  margin: 0;
-}
-.lead { font-style: italic; font-size: 1.5rem; line-height: 1.45; }
-.klein { font-size: 0.875rem; line-height: 1.4; }
+.text-lead { font-style: italic; font-size: 1.5rem; line-height: 1.45; }
+.text-small { font-family: var(--font-display); font-size: 0.875rem; line-height: 1.4; }
 .link {
+  font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--weinrot);
+  color: var(--color-accent);
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.2em;
 }
-
-img { display: block; max-width: 100%; }
+.link:hover { text-decoration-thickness: 2px; }

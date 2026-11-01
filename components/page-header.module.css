@@ -1,0 +1,6 @@
+.header {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(5rem, 10vw, 8.75rem) var(--gutter) clamp(2.5rem, 5vw, 4rem);
+}
+.lead { max-width: 47.5rem; }

@@ -1,0 +1,13 @@
+.hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100svh;
+  padding: 8rem var(--gutter) 5.5rem;
+  color: var(--color-cream);
+  /* Für ein Foto: var(--color-black) durch url("/images/hero.jpg") center / cover ersetzen */
+  background:
+    linear-gradient(to bottom, rgb(0 0 0 / 0.35), transparent 22%, transparent 55%, rgb(0 0 0 / 0.6)),
+    var(--color-black);
+}
+
+.line { display: block; }
