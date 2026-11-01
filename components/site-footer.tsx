@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { siteConfig } from "@/lib/site-config";
 import styles from "./site-footer.module.css";
 
@@ -5,8 +6,14 @@ type SiteFooterProps = {
   variant?: "dark" | "accent";
 };
 
-export function SiteFooter({ variant = "dark" }: SiteFooterProps) {
-  const year = new Date().getFullYear();
+async function getCurrentYear() {
+  "use cache";
+  cacheLife("max");
+  return new Date().getFullYear();
+}
+
+export async function SiteFooter({ variant = "dark" }: SiteFooterProps) {
+  const year = await getCurrentYear();
 
   return (
     <footer className={styles.footer} data-variant={variant}>
