@@ -7,7 +7,7 @@ export default function HomeLayout({ children }: Readonly<{ children: ReactNode 
     <>
       <SiteHeader variant="transparent" />
       {children}
-      <SiteFooter variant="accent" />
+      <SiteFooter />
     </>
   );
 }

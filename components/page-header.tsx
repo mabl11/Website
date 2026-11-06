@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import styles from "./page-header.module.css";
 
 type PageHeaderProps = {
@@ -8,8 +9,14 @@ type PageHeaderProps = {
 export function PageHeader({ title, lead }: PageHeaderProps) {
   return (
     <header className={styles.header}>
-      <h1>{title}</h1>
-      {lead ? <p className={`text-lead ${styles.lead}`}>{lead}</p> : null}
+      <h1 className="enter" style={{ "--enter-delay": "0ms" } as CSSProperties}>
+        {title}
+      </h1>
+      {lead ? (
+        <p className={`text-lead enter ${styles.lead}`} style={{ "--enter-delay": "120ms" } as CSSProperties}>
+          {lead}
+        </p>
+      ) : null}
     </header>
   );
 }
