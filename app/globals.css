@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Palette (Figma: Farben) */
+  --color-cream: #fcfaf6;
+  --color-beige: #f6f0e4;
+  --color-black: #000000;
+  --color-ink: #14080a;
+  --color-wine: #5e1a24;
+  --color-wine-deep: #3d0f17;
+  --color-wine-light: #8c3a47;
+  --color-wine-tint: #f4e9e6;
+  --color-gray: #545454;
+  --color-gray-light: #a39e97;
+  --color-line: #e4e4e4;
+
+  /* Semantic tokens */
+  --color-bg: var(--color-cream);
+  --color-surface: var(--color-beige);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-gray);
+  --color-accent: var(--color-wine);
+  --color-accent-tint: var(--color-wine-tint);
+  --color-border: var(--color-line);
+
+  /* Typography — eine Sans für alles, die Serif nur als Akzent (Lead, Hervorhebungen) */
+  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+
+  --text-sm: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-base: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --text-lead: clamp(1.5rem, 1.25rem + 1vw, 2.125rem);
+  --text-h3: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --text-h2: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+  --text-h1: clamp(3rem, 2rem + 4.5vw, 6rem);
+  --text-display: clamp(4rem, 1rem + 12vw, 12rem);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 800ms;
+
+  /* Layout */
+  --gutter: clamp(1.25rem, 5.5vw, 5rem);
+  --header-height: 5.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+*, *::before, *::after { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-padding-top: var(--header-height);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-cream);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-wrap: balance;
+}
+h1, .text-h1 { font-size: var(--text-h1); line-height: 1; letter-spacing: -0.035em; }
+h2, .text-h2 { font-size: var(--text-h2); line-height: 1.1; letter-spacing: -0.025em; }
+h3, .text-h3 { font-size: var(--text-h3); line-height: 1.25; letter-spacing: -0.015em; }
+.text-h1, .text-h2, .text-h3 { font-family: var(--font-sans); font-weight: 500; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+/* Text styles (Figma: Textstile) */
+.text-display {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-display);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.text-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-lead);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.text-small { font-size: var(--text-sm); line-height: 1.45; }
+
+.link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-thickness 150ms ease;
+}
+.link:hover { text-decoration-thickness: 2px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Scroll-Reveal (siehe components/reveal.tsx).
+   Nur versteckt, wenn JavaScript läuft — ohne JS bleibt alles sichtbar. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity var(--duration) var(--ease-out),
+    transform var(--duration) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Einblenden beim Laden (für Inhalte direkt oben auf der Seite) */
+.enter {
+  animation: enter var(--duration) var(--ease-out) both;
+  animation-delay: var(--enter-delay, 0ms);
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .enter { animation: none; }
 }
