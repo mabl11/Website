@@ -11,10 +11,14 @@ export type PortfolioItem = {
 };
 
 export const portfolio: PortfolioItem[] = [
-  { title: "Abendrot über dem Piz Languard", place: "Pontresina", year: "2025", format: "wide" },
-  { title: "Stille am Silsersee", place: "Sils", year: "2025", format: "tall" },
-  { title: "Nacht über Samedan", place: "Samedan", year: "2024", format: "tall" },
-  { title: "Erster Schnee", place: "Val Bever", year: "2024", format: "square" },
-  { title: "Morgen am Pilatus", place: "Luzern", year: "2025", format: "square" },
-  { title: "Nebel im Rheintal", place: "Sargans", year: "2023", format: "wide" },
+  { title: "Two figure`s Kiss", place: "St.Elizabeth park", year: "2026", format: "wide", image: "/images/portfolio/kiss.jpg" },
+  { title: "Imperium Romanium", place: "Center of the World", year: "2023", format: "wide", image: "/images/portfolio/bellaroma.jpg" },
+  { title: "Bologna during workinghours", place: "Città bolognese", year: "2024", format: "square", image: "/images/portfolio/busybologna.jpg" },
+  { title: "Evening cable car", place: "Grouse Mountain", year: "2026", format: "tall", image: "/images/portfolio/grouse.jpg" },
+  { title: "Early morning Piz Ot", place: "Piz Padella", year: "2024", format: "wide", image: "/images/portfolio/sunispizot.jpg" },
+  { title: "BC Lions", place: "BC Place", year: "2026", format: "square", image: "/images/portfolio/bclions.jpg" },
+  { title: "Unconquered Castle", place: "San Marino", year: "2023", format: "wide", image: "/images/portfolio/smcastle.jpg" },
+  { title: "Snowy details", place: "Samedan", year: "2022", format: "square", image: "/images/portfolio/spitzespitzen.jpg" },
+  { title: "Golden era Vancouver", place: "Waterfront", year: "2026", format: "square", image: "/images/portfolio/vancity.jpg" },
+  { title: "Canadian sunfire", place: "Vancouver", year: "2026", format: "tall", image: "/images/portfolio/wildness.jpg" },
 ];

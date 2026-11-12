@@ -8,6 +8,7 @@ import { about, cv, details } from "@/content/about";
 import { pageMetadata } from "@/lib/metadata";
 import { personSchema } from "@/lib/structured-data";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
@@ -24,8 +25,17 @@ export default function AboutPage() {
       <JsonLd data={personSchema} />
       <section className={styles.intro} aria-labelledby="about-title">
         {/* Platzhalter, bis ein echtes Porträt da ist */}
-        <div className={`${styles.portrait} enter`} aria-hidden="true">
-          <span className="text-small">Porträt</span>
+        <div className={`${styles.portrait} enter`}>
+          <div className={styles.portraitImage}>
+            <Image
+              src="/images/about/misterm.jpg"
+              alt="Que sun eau."
+              fill
+              preload
+              sizes="(max-width: 48rem) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
 
         <div className={styles.content}>

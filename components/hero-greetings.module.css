@@ -2,7 +2,8 @@
   display: flex;
   align-items: flex-end;
   min-height: 100svh;
-  padding: 8rem var(--gutter) 5.5rem;
+  /* Unten mehr Abstand, damit der Text höher sitzt */
+  padding: 8rem var(--gutter) clamp(7rem, 22svh, 14rem);
   color: var(--color-cream);
   /* Für ein Foto: var(--color-black) durch url("/images/hero.jpg") center / cover ersetzen */
   background:
@@ -14,9 +15,11 @@
 .rotator {
   display: grid;
   /* Platz für Unterlängen, damit «g» nicht abgeschnitten wird */
-  padding-bottom: 0.1em;
-  margin-bottom: -0.1em;
+  padding-bottom: 0.4em;
+  margin-bottom: -0.4em;
   overflow: hidden;
+  /* Etwas grösser als die übrigen Display-Titel */
+  font-size: clamp(4.5rem, 1rem + 13.5vw, 13.5rem);
 }
 
 .word {
