@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={personSchema} />
       <section className={styles.intro} aria-labelledby="about-title">
-        {/* Platzhalter, bis ein echtes Porträt da ist */}
+        {/* could be an egg?*/}
         <div className={`${styles.portrait} enter`}>
           <div className={styles.portraitImage}>
             <Image
