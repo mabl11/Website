@@ -10,20 +10,21 @@ export type SocialLink = {
 
 export const siteConfig = {
   name: "Mauro",
-  title: "Mauro — Informatik, Technik & Fotografie",
+  title: "Mauro. Ich, Eau, Me, Io",
   description:
-    "Persönliche Website von Mauro aus Samedan: Informatikstudent an der HSLU, Fotografie und Blog.",
-  /** Produktive Domain — per NEXT_PUBLIC_SITE_URL setzen (z. B. in Vercel) */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    "Die Persönliche Website von Mauro. Inhalte auf dieser Website sind persönliche alltagsdinge und Fotografie. Kann zudem Spuren von Technik, Humor und Politik enthalten.",
+  /* who was here? */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mauroblatter.ch",
   locale: "de_CH",
   location: "Luzern / Samedan, Schweiz",
-  keywords: ["Mauro", "Informatik", "HSLU", "Samedan", "Engadin", "Luzern", "Software Engineer", "Fotografie", "Blog"],
-  /** Optional — wird im Footer nur angezeigt, wenn gesetzt */
+  keywords: ["Mauro", "Blatter", "Informatik", "HSLU", "Samedan", "Engadin", "St.Moritz", "Luzern", "Software Engineer", "Fotografie", "Blog"],
+  /** Optional */
   email: "",
 };
 
 export const socialLinks: SocialLink[] = [
-  { label: "Instagram", href: "https://www.instagram.com/" },
+  { label: "Instagram", href: "https://www.instagram.com/mau_bla11/" },
+  { label: "KIBLA", href: "https://www.kibla.ch" },
 ];
 
 export const mainNavigation: NavItem[] = [
