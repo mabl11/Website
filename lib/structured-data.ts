@@ -11,10 +11,7 @@ export const personSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   jobTitle: "Operations Engineer",
-  worksFor: [
-    { "@type": "Organization", name: "Urban Connect" },
-    { "@type": "Organization", name: "Pilatus Aircraft" },
-  ],
+  worksFor: { "@type": "Organization", name: "Urban Connect" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Hochschule Luzern (HSLU)" },
   homeLocation: { "@type": "Place", name: "Samedan, Graubünden, Schweiz" },
   address: { "@type": "PostalAddress", addressLocality: "Luzern", addressCountry: "CH" },
