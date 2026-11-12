@@ -11,12 +11,17 @@ export const about = {
 };
 
 export const details: DetailItem[] = [
-  { label: "Geboren", value: "11. November 2003" },
-  { label: "Kommt aus", value: "Samedan" },
+  { label: "Geboren am", value: "11. November 2003" },
+  { label: "Ursprünglich aus", value: "Samedan" },
   { label: "Lebt in", value: "Luzern" },
 ];
 
 export const cv: TimelineEntry[] = [
+    {
+    period: "August 2026",
+    title: "Summerschool Blockchain",
+    description: "UBC Vancouver, Cryptobros und kultureller Austausch",
+  },
   {
     period: "Seit 2025",
     title: "Bachelor in Informatik",
@@ -25,7 +30,7 @@ export const cv: TimelineEntry[] = [
   {
     period: "Sommer 2024",
     title: "RS – Aufklärer Leicht",
-    description: "Durchhaltevermögen, Sport als Energiequelle kennengelernt",
+    description: "Bière, Durchhaltevermögen und Sport als Energiequelle kennengelernt",
   },
   {
     period: "2023 bis 2024",
@@ -35,6 +40,6 @@ export const cv: TimelineEntry[] = [
   {
     period: "2019 bis 2023",
     title: "Lehre als Elektroniker",
-    description: "Landquart / Sargans, Grundlagen im HW/SW-Bereich",
+    description: "Landquart / Sargans, Grundlagen im HW/SW-Bereich aufgebaut",
   },
 ];

@@ -43,7 +43,7 @@ export function HeroGreetings({ greetings, interval = 2400 }: HeroGreetingsProps
         <span className={styles.rotator} aria-hidden="true">
           {greetings.map(({ text, lang }, i) => (
             <span
-              key={lang}
+              key={text}
               lang={lang}
               className={styles.word}
               data-state={i === index ? "active" : i === previous ? "exit" : "idle"}
