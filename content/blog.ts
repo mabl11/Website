@@ -6,24 +6,5 @@ export type BlogPost = {
   category: string;
 };
 
-/** Platzhalter-Beiträge — durch echte Artikel ersetzen */
-export const posts: BlogPost[] = [
-  {
-    title: "Von der Elektronik-Lehre ins Informatikstudium",
-    date: "2025-10-12",
-    excerpt: "Was ich aus vier Jahren Lehre mitgenommen habe und warum der Wechsel an die HSLU der richtige Schritt war.",
-    category: "Studium",
-  },
-  {
-    title: "Software, die fliegt",
-    date: "2025-09-03",
-    excerpt: "Ein Einblick in meinen Alltag als Test Flight Software Engineer bei Pilatus.",
-    category: "Technik",
-  },
-  {
-    title: "Warum Sport mich weiterbringt",
-    date: "2025-07-21",
-    excerpt: "Von der RS bis heute: Wie Bewegung zur wichtigsten Energiequelle geworden ist.",
-    category: "Sport",
-  },
-];
+/** Beiträge — neueste zuerst */
+export const posts: BlogPost[] = [];
