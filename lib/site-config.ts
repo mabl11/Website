@@ -12,7 +12,7 @@ export const siteConfig = {
   name: "Mauro",
   title: "Mauro — Informatik, Technik & Fotografie",
   description:
-    "Persönliche Website von Mauro aus Samedan: Informatikstudent an der HSLU, Test Flight Software Engineer bei Pilatus, Fotografie und Blog.",
+    "Persönliche Website von Mauro aus Samedan: Informatikstudent an der HSLU, Fotografie und Blog.",
   /** Produktive Domain — per NEXT_PUBLIC_SITE_URL setzen (z. B. in Vercel) */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "de_CH",
