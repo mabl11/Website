@@ -10,7 +10,6 @@ export const personSchema = {
   "@type": "Person",
   name: siteConfig.name,
   url: siteConfig.url,
-  jobTitle: "Test Flight Software Engineer",
   worksFor: { "@type": "Organization", name: "Pilatus Aircraft" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Hochschule Luzern (HSLU)" },
   homeLocation: { "@type": "Place", name: "Samedan, Graubünden, Schweiz" },

@@ -7,7 +7,7 @@ export const about = {
   intro:
     "23 Jahre jung. Sport bringt mich weiter. Interessiert in vielen Bereichen, egal ob Technologie, Informatik, Elektronik oder auch Politik und Geschichte!",
   workTitle: "Was ich mache",
-  work: "Ich studiere Informatik an der HSLU in Rotkreuz und arbeite nebenbei bei Pilatus als Test Flight Software Engineer.",
+  work: "Ich studiere Informatik an der HSLU in Rotkreuz und arbeite nebenbei bei Pilatus.",
 };
 
 export const details: DetailItem[] = [
